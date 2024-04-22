@@ -15,12 +15,14 @@ body, html {
     background-size: cover; /* This is the key to scale the background */
     height: 100%;
     display: flex;
-    align-items: center; /* This vertically centers the text inside the div */
+    align-items: flex-start; /* This vertically centers the text inside the div */
     justify-content: center; /* This horizontally centers the text inside the div */
+    position: fixed;
+    overflow: auto;
 }
 
 h1 {
-    color: white; /* Ensures text is visible on darker backgrounds */
+    color: #3a6959; /* Ensures text is visible on darker backgrounds */
     font-size: 2em;
 }
 
@@ -33,6 +35,7 @@ header {
     top: 0;
     width: 100%;
     height: var(--header-bar-height);
+    z-index: 500;
 }
 
 .logo {
@@ -49,6 +52,7 @@ header {
     flex-grow: 0;
     text-align: center; /* Centers the navbar links */
     margin: auto;
+    
 }
 
 .navbar a {
@@ -67,4 +71,123 @@ header {
         display: block;
         text-align: left;
     }
+}
+
+.content-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows containers to wrap */
+    gap: 10px; /* Optional: Adds space between containers */
+    padding-top: calc(var(--header-bar-height));
+
+}
+
+.content-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.content-title img {
+    width: 75%;
+    position: relative;
+    margin: auto;
+}
+
+/* Styles for sub-containers */
+.section-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* Each sub-container takes up equal space */
+    flex-wrap: wrap; /* Allows nested items to wrap within the sub-container */
+    min-width: 200px; /* Minimum width before wrapping occurs */
+    /* background: lightgray; Just for better visibility */
+    padding: 10px;
+    margin: 5px;
+    box-sizing: border-box;
+    max-width: 550px;
+}
+
+/* Styles for nested containers */
+.section-component {
+    flex: 1 1 100px; /* Grows to fill the space, wraps if less than 100px wide */
+    margin: 25px; /* Space between nested items */
+    background: rgba(255, 255, 255, 0.7); /* Just for better visibility */
+    color: #3a6959;
+    padding: 10px;
+    /* text-align: center; */
+    box-sizing: border-box;
+    border-radius: 10px;
+    border-width: 3px;
+    border-color: rgba(58, 105, 89, 0.7);
+    border-style: solid;
+    position: relative;
+    max-width: 100%;
+}
+
+.columns {
+    display: flex; /* Activates flexbox */
+    justify-content: center; /* Centers the flex items horizontally */
+    align-items: center; /* Aligns the flex items vertically in the middle */
+    gap: 20px; /* Optional: adds space between the flex items */
+}
+
+.column {
+    flex: 1; /* Each flex item takes equal amount of space */
+}
+
+.column img {
+    width: 100%; /* Makes the image responsive */
+    max-width: 600px; /* Maximum width of the image */
+    height: auto; /* Keeps the image aspect ratio */
+}
+
+
+#buy-button {
+    position: relative;
+    
+}
+
+#utility-container {
+    display: flex;
+    width: 100%;
+    clear: both;
+    max-height: 600px;
+    overflow: hidden;
+}
+
+#utility-container img {
+    height: 400px;
+    flex-grow: 0;
+    position: relative;
+    padding: 20px;
+}
+
+.site-footer {
+    background-color: #333; /* Dark background for the footer */
+    color: #fff; /* White text color */
+    padding: 20px; /* Padding around the content */
+    text-align: center; /* Center-aligns the text */
+    font-size: 14px; /* Smaller font size for the footer text */
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-nav {
+    margin-top: 10px; /* Space above the navigation links */
+}
+
+.footer-nav a {
+    color: #fff; /* White text color for links */
+    text-decoration: none; /* No underlines on links */
+    margin: 0 10px; /* Spacing between links */
+}
+
+.footer-nav a:hover {
+    text-decoration: underline; /* Underline on hover for better UX */
 }
