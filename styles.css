@@ -167,19 +167,26 @@ header {
     padding: 20px;
 }
 
+footer {
+    width: 100vw;
+}
+
 .site-footer {
     background-color: #333; /* Dark background for the footer */
     color: #fff; /* White text color */
-    padding: 20px; /* Padding around the content */
     text-align: center; /* Center-aligns the text */
     font-size: 14px; /* Smaller font size for the footer text */
-    width: 100vw;
     display: flex;
     justify-content: space-between;
 }
 
+footer p {
+    padding-left: 20px;
+}
+
 .footer-nav {
     margin-top: 10px; /* Space above the navigation links */
+    padding-right: 20px;
 }
 
 .footer-nav a {
